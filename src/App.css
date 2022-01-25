@@ -2,6 +2,10 @@
   background-color: rgb(15, 53, 76);
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
 }
 
 .top-bar-logo {
@@ -41,6 +45,7 @@
   align-items: center;
   width: auto;
   height: auto;
+  padding-top: 6em;
 }
 
 .dashboard-videos-container {
@@ -61,6 +66,8 @@
   height: 18em;
   overflow-wrap: normal;
   margin: 2em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   position: relative-position;
   cursor: pointer;
 }
