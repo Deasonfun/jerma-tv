@@ -1,13 +1,19 @@
 import React from 'react';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 const VideoModal = (props) => {
     let playingVideo = props.playingVideo;
     let setShowing = props.setShowing;
     let videoID = playingVideo.snippet.resourceId.videoId;
-    return <div className='modal-background'>
+    disableBodyScroll(document.getElementsByClassName('dashboard-container'));
+    const Close = () => {
+        setShowing(false);
+        enableBodyScroll(document.getElementsByClassName('dashboard-container'));
+    }
+    return <div className='modal-background' onClick={() => Close()}>
         <div className='modal-container'>
             <div className='modal-close-container'>
-                <button className='modal-close-button' onClick={() => setShowing(false)}>X</button>
+                <button className='modal-close-button' onClick={() => Close()}>X</button>
             </div>
             <div className='modal-body-container'>
                 <div className='modal-video-container'>
@@ -28,5 +34,7 @@ const VideoModal = (props) => {
         </div>
     </div>
 }
+
+
 
 export default VideoModal;
