@@ -200,4 +200,5 @@
     height: 100%;
     color: rgb(231, 231, 231);
     overflow-wrap: break-word;
+    white-space: pre-line;
 }
